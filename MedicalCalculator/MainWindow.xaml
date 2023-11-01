@@ -1,0 +1,183 @@
+﻿<Window x:Class="MedicalCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalCalculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Border Background="GhostWhite" BorderBrush="Silver" BorderThickness="1" CornerRadius="8,8,3,3">
+        <Grid Background="LightBlue">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Width="400" Height="40" VerticalAlignment="Top" Margin="50" FontSize="30" Background="White">Расчет факторов риска ВТЭО</TextBlock>
+            <TextBlock Height="40" VerticalAlignment="Top" Margin="80,200,62,0" FontSize="30" Background="White">Предсуществующие факторы риска</TextBlock>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="600" Margin="0,258,0,0">
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Предшествующее ВТЭО (за исключением однократного эпизода, связанного с большим хирургическим вмешательством)</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="WrapWithOverflow">ВТЭО, спровоцированное большим хирургическим вмешательством</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Подтвержденное наличие тромбофилии высокого риска:
+                </CheckBox>
+                <Expander Header="Перечень" FontSize="20">
+                    <StackPanel Margin="5">
+                        <RadioButton >Антифосфолипидный синдром (АФС)</RadioButton>
+                        <RadioButton Margin="0,5,0,0">гомозиготная мутация гена фактора V (мутация Лейден F5 G1691A) или rs 6025
+(далее – мутация F5)
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">гомозиготная мутация гена фактора II (протромбина) F2 G20210А или rs 179996
+(далее – мутация F2)
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">сочетание гетерозиготных мутаций факторов V (Лейден) и II (протромбина);
+ дефицит АТ
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">дефицит протеина С
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">дефицит протеина S
+                        </RadioButton>
+                    </StackPanel>
+                </Expander>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Сопутствующие заболевания:
+                </CheckBox>
+                <Expander Header="Перечень" FontSize="20">
+                    <StackPanel Margin="5">
+                        <RadioButton >онкологическое заболевание;</RadioButton>
+                        <RadioButton Margin="0,5,0,0">пароксизмальная ночная гемоглобинурия,
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">сердечная недостаточность;
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">активная системная красная волчанка,
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">воспалительная полиартропатия,
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">воспалительное заболевание кишечника;
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">нефротический синдром;
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">сахарный диабет I типа с нефропатией;
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">серповидноклеточная анемия;
+                        </RadioButton>
+                        <RadioButton Margin="0,5,0,0">наркомания с внутривенным введением наркотиков в настоящее время
+                        </RadioButton>
+                    </StackPanel>
+                </Expander>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Семейный анамнез неспровоцированной или связанное с воздействием эстрогена ВТЭО у родственника первой степени родства</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Известная тромбофилия низкого риска (без ВТЭО)
+                </CheckBox>
+                <Expander Header="Перечень" FontSize="20">
+                    <StackPanel Margin="5">
+                        <RadioButton >гетерозиготная мутация гена фактора V (мутация Лейден F5 G1691A)</RadioButton>
+                        <RadioButton Margin="0,5,0,0">гетерозиготная мутация гена фактора II (протромбина) F2 G20210А
+                        </RadioButton>
+                    </StackPanel>
+                </Expander>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Width="700" Grid.ColumnSpan="2">
+                    Возраст (> 35 лет)
+                </CheckBox>
+                <Label FontSize="20">Масса тела и рост:</Label>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Height="30" Width="100" HorizontalAlignment="Left"></TextBox>
+                    <TextBlock FontSize="20" Grid.ColumnSpan="2" Margin="107,14,107,-12">кг.</TextBlock>
+                    <TextBox Height="30" Width="100" HorizontalAlignment="Left" Grid.Column="1"></TextBox>
+                    <TextBlock FontSize="20" Grid.ColumnSpan="2" Grid.Column="1" Margin="107,15,107,-14">см.</TextBlock>
+                    <TextBlock FontSize="20" Grid.Column="2">ИМТ= <Label Height="32" Width="20">0</Label> кг/м^2</TextBlock>
+                </Grid>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Width="700" Grid.ColumnSpan="2">
+                    >=3 родов
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Width="700" Grid.ColumnSpan="2">
+                    Курение
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Варикозное расширение вен нижних конечностей тяжелой степени</TextBlock>
+                </CheckBox>
+            </StackPanel>
+
+            <TextBlock Height="40" VerticalAlignment="Top" Margin="80,200,62,0" FontSize="30" Background="White" Grid.Column="1" Width="390">Акушерские факторы риска</TextBlock>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="600" Margin="0,258,0,0" Grid.Column="1" >
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Преэклампсия во время текущей беременности</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="WrapWithOverflow">ВРТ/ЭКО (только антенатально)</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Многоплодная беременность
+                </CheckBox>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Кесарево сечение в родах
+                </CheckBox>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Плановое кесарево сечение</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Вагинальное оперативное родоразрешение, в т.ч. с применением ротационных
+акушерских щипцов</TextBlock>
+                </CheckBox>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Width="700" Grid.ColumnSpan="2">
+                    Продолжительные роды (&gt;24 часов)
+                </CheckBox>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Width="700" Grid.ColumnSpan="2">
+                    Послеродовое кровотечение (&gt;1 литра или переливание крови)
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Width="700" Grid.ColumnSpan="2">
+                    Преждевременные роды &lt;37+0 недели при данной беременности
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Мертворождение в настоящую беременность</TextBlock>
+                </CheckBox>
+            </StackPanel>
+            <TextBlock Height="40" VerticalAlignment="Top" Margin="80,200,62,0" FontSize="30" Background="White" Grid.Column="2" Width="390">Преходящие факторы риска</TextBlock>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="600" Margin="0,258,0,0" Grid.Column="2" >
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Любая хирургическая процедура во время беременности или послеродового периода,
+(за исключением наложения швов на промежность сразу после родов), например,
+аппендэктомия, послеродовая стерилизация</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="WrapWithOverflow">Неукротимая рвота</TextBlock>
+                </CheckBox>
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Синдром гиперстимуляции яичников (только первый триместр)
+                </CheckBox>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    Системная инфекция в настоящее время
+                </CheckBox>
+
+                <CheckBox Checked="CheckBox_Checked" Grid.Row="0" Unchecked="CheckBox_Unchecked" FontSize="20" Grid.ColumnSpan="2">
+                    <TextBlock TextWrapping="Wrap">Ограничение подвижности, обезвоживание</TextBlock>
+                </CheckBox>
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
